@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Stefanus Ayudha</title>
+<style>
+  :root {
+    --bg-top: #1c1c1c;
+    --bg-bottom: #030303;
+    --card-bg: #111111;
+    --text-main: #f5f5f5;
+    --text-sub: #9a9a9a;
+    --shadow-dark: #000000;
+    --shadow-light: #2e2e2e;
+    --accent: #ff6e00;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  /* Profile circle */
+  .avatar {
+    width: 148px;
+    height: 148px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #232323, #0a0a0a);
+    box-shadow:
+      8px 8px 16px var(--shadow-dark),
+      -8px -8px 16px var(--shadow-light),
+      inset 0 0 0 1px rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .avatar::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #0a0a0a, #1c1c1c);
+    box-shadow:
+      inset 4px 4px 8px var(--shadow-dark),
+      inset -4px -4px 8px var(--shadow-light);
+  }
+
+  .avatar img {
+    position: relative;
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .name {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-main);
+    text-align: center;
+    letter-spacing: 0.2px;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.6);
+  }
+
+  /* Skeuomorphic buttons */
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 22px;
+  }
+
+  .btn {
+    flex: 0 0 auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #262626, #0c0c0c);
+    box-shadow:
+      6px 6px 12px var(--shadow-dark),
+      -6px -6px 12px var(--shadow-light),
+      inset 0 1px 0 rgba(255,255,255,0.08),
+      inset 0 -1px 0 rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.06);
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.08s ease, box-shadow 0.08s ease;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+
+  .btn:active {
+    transform: translateY(2px) scale(0.96);
+    box-shadow:
+      inset 4px 4px 8px var(--shadow-dark),
+      inset -4px -4px 8px var(--shadow-light);
+  }
+
+  .btn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .btn.call svg { fill: #4cd964; }
+  .btn.sms svg { fill: var(--accent); }
+  .btn.email svg { fill: #f5f5f5; }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="avatar">
+      <img src="icon.png" alt="Profile photo">
+    </div>
+
+    <div class="name">Steve</div>
+
+    <div class="buttons">
+      <a class="btn call" href="tel:+6289520000366" aria-label="Call" title="Call">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+      </a>
+
+      <a class="btn sms" href="sms:+6289520000366" aria-label="SMS" title="SMS">
+        <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
+      </a>
+
+      <a class="btn email" href="mailto:stefanus.ayudha@gmail.com" aria-label="Email" title="Email">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
